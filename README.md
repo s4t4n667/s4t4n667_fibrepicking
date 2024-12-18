@@ -10,6 +10,8 @@ Useful resource for acquiring fibres which can be used in crafting recipes. Uses
 
 **Preview video:** [Click Here](https://youtu.be/gJlxxr6Jz58)
 <br>
+**Documentation:** [Click Here](https://s4t4n667.gitbook.io/asgaard-developments/free-scripts/s4t4n667_fibrepicking)
+<br>
 
 > Dependencies:
 > <br>
