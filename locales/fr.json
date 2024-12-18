@@ -1,0 +1,13 @@
+{
+
+    "carry" : {
+        "title" : "Inventaire plein",
+        "description" : "Vous ne pouvez pas porter plus de fibres"
+    },
+
+    "fail" : {
+        "title" : "Impossible de ramasser des fibres",
+        "description" : "Vous n'avez pas réussi à ramasser de fibres"
+    }
+
+}

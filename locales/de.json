@@ -1,0 +1,14 @@
+{
+
+    "carry" : {
+        "title" : "Inventar voll",
+        "description" : "Du kannst keine weiteren Fasern tragen"
+    },
+
+    "fail" : {
+        "title" : "Kann keine Fasern aufsammeln",
+        "description" : "Es ist dir nicht gelungen, Fasern aufzusammeln"
+    }
+
+}
+

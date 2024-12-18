@@ -1,0 +1,13 @@
+{
+
+    "carry" : {
+        "title" : "Full inventory",
+        "description" : "You are unable to carry any more fibres"
+    },
+
+    "fail" : {
+        "title" : "Can't pick fibres",
+        "description" : "You failed to pick any fibres"
+    }
+
+}
