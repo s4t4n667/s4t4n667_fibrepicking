@@ -19,5 +19,28 @@
     "cooldown" : {
         "title" : "Cooldown Active",
         "description" : "You must wait before trying to pick any more fibres."
+    },
+
+    "interact" : {
+        "target" : "Talk",
+        "menu" : {
+            "title" : "Fibre Picking",
+            "sell" : "Sell Fibres",
+            "sellDesc" : "Sell harvested fibres for cash",
+            "buy" : "Buy Shears",
+            "buyDesc" : "Purchase shears used to pick fibres for "
+        },
+        "sellMenu" : {
+            "sellCustom": "Sell Custom Amount",
+            "sellCustomDesc" : "Sell a selected amount of fibres (",
+            "perItem" : "per fibre",
+            "sellAll": "Sell All",
+            "sellAllDesc": "Sell all available fibres in your pockets",
+            "saleSuccess" : "Sale Complete",
+            "youSold" : "You sold ",
+            "fibresFor" : " fibres for ",
+            "noFibres" : "No Fibres",
+            "noFibresDesc" : "You don't have any fibres to sell"
+        }
     }
 }

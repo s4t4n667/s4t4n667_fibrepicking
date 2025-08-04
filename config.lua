@@ -11,13 +11,22 @@ return {
         
         animation = 'e mechanic4',
 
-        item = 'shears', -- can be set to false if you don't want there to be a required item
-
         useSkillcheck = false,
         skillCheck = {'easy', 'easy', 'easy'},
         skillCheckKeys = { 'e', 'e', 'e' },
 
         progressDuration = 3000, -- only used if useSkillcheck is false 
+    },
+
+    sell = {
+        moneyItem = 'money',
+        price = 10,
+        currency = "$",
+    },
+
+    tool = {
+        item = 'shears',
+        price = 1000,
     },
 
     target = {

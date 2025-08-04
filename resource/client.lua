@@ -20,6 +20,106 @@ CreateThread(function()
     end
 end)
 
+CreateThread(function()
+    local model = `a_m_m_farmer_01` -- choose your model
+    local coords = vector4(2588.0945, 4665.3818, 34.0768, 227.5840) -- change to your location
+
+    RequestModel(model)
+    while not HasModelLoaded(model) do
+        Wait(0)
+    end
+
+    local ped = CreatePed(0, model, coords.x, coords.y, coords.z - 1.0, coords.w, false, true)
+    SetEntityInvincible(ped, true)
+    SetBlockingOfNonTemporaryEvents(ped, true)
+    FreezeEntityPosition(ped, true)
+
+    exports.ox_target:addLocalEntity(ped, {
+        {
+            name = 'sell_fibres',
+            icon = 'fa-solid fa-comments',
+            label = locale('interact.target'),
+            onSelect = function()
+                openSellMenu()
+            end
+        }
+    })
+end)
+
+function openSellMenu()
+    local Options = {}
+    Options[#Options + 1] = {
+        title = locale('interact.menu.sell'),
+        description = locale('interact.menu.sellDesc'),
+        icon = 'leaf',
+        menu = "fibre_submenu"
+    }
+    if config.tool.item then
+        Options[#Options + 1] = {
+            title = locale('interact.menu.buy'),
+            description = locale('interact.menu.buyDesc')..config.sell.currency..tostring(config.tool.price),
+            icon = 'hammer',
+            onSelect = function()
+                TriggerServerEvent('s4t4n667_fibrepicking:buyTool')
+            end
+        }
+    end
+
+    lib.registerContext({
+        id = 'sell_menu',
+        title = locale('interact.menu.title'),
+        options = Options
+    })
+
+    lib.showContext('sell_menu')
+end
+
+lib.registerContext({
+        id = "fibre_submenu",
+        title = locale('interact.menu.sell'),
+        menu = "sell_menu",
+        options = {
+            {
+                title = locale('interact.sellMenu.sellCustom'),
+                description = locale('interact.sellMenu.sellCustomDesc')..config.sell.currency..tostring(config.sell.price)..locale('interact.sellMenu.perItem'),
+                icon = "dollar-sign",
+                onSelect = function()
+                    fibreDialog()
+                end
+            },
+            {
+                title = locale('interact.sellMenu.sellAll'),
+                description = locale('interact.sellMenu.sellAllDesc'),
+                icon = "sack-dollar",
+                onSelect = function()
+                    TriggerServerEvent('s4t4n667_fibrepicking:sellAllFibres')
+                end
+            }
+        }
+})
+
+function fibreDialog()
+    local input = lib.inputDialog("Sell Custom Amount", {
+        { type = 'number', label = "Enter Amount:", name = "amount" }
+    })
+
+    if input then
+        local amount = input[1]
+        if config.debug then
+            print('Input Value: ', tostring(amount))
+        end
+        if amount and amount > 0 then
+            TriggerServerEvent('s4t4n667_fibrepicking:sellFibres', amount)
+        else
+            lib.notify({
+                title = 'Invalid Amount',
+                description = 'Please enter a number greater than 0.',
+                type = 'error'
+            })
+        end
+    end
+end
+
 local function checkItem(itemName, cb)
     lib.callback("s4t4n667_fibrepicking:checkItem", false, function(hasItem)
         if config.debug then
@@ -34,6 +134,7 @@ local function pickFibres()
     local playerPos = GetEntityCoords(ped)
 
     local currentTime = GetGameTimer()
+
     if currentTime - lastPickTime < config.cooldown then
         lib.notify({
             id = 'cooldownActive',
@@ -119,10 +220,10 @@ local function fibreSpots()
             iconColor = config.target.iconColor,
             distance = config.target.distance,
             onSelect = function()
-                if not config.picking.item then
+                if not config.tool.item then
                     pickFibres()
                 else 
-                    checkItem(config.picking.item, function(hasItem)
+                    checkItem(config.tool.item, function(hasItem)
                         if hasItem then
                             pickFibres()
                         else
