@@ -1,4 +1,9 @@
 {
+    "item": {
+        "title": "Missing Tool",
+        "description": "You lack the required tools to perform this task"
+    },
+
     "carry" : {
         "title" : "Full inventory",
         "description" : "You are unable to carry any more fibres"
@@ -14,5 +19,38 @@
     "cooldown" : {
         "title" : "Cooldown Active",
         "description" : "You must wait before trying to pick any more fibres."
+    },
+
+    "interact" : {
+        "target" : "Talk",
+        "menu" : {
+            "title" : "Fibre Picking",
+            "sell" : "Sell Fibres",
+            "sellDesc" : "Sell harvested fibres for cash",
+            "buy" : "Buy Tools",
+            "buyDesc" : "Purchase tools used to pick fibres.",
+            "tool" : "Buy %s",
+            "toolDesc" : "Purchase %s for ",
+            "purchased" : "Purchased a %s",
+            "purchasedDesc" : "You paid ",
+            "insufficientFunds" : "Insufficient Funds",
+            "insufficientFundsDesc" : "You do not have enough money to purchase this item"
+        },
+        "sellMenu" : {
+            "sellCustom": "Sell Custom Amount",
+            "sellCustomDesc" : "Sell a selected amount of fibres (",
+            "perItem" : " per fibre)",
+            "sellAll": "Sell All",
+            "sellAllDesc": "Sell all available fibres in your pockets",
+            "sellC": "Sell Custom Amount",
+            "customAmont": "Enter Amount: ",
+            "invalidAmount" : "Invalid Amount",
+            "invalidAmountDesc" : "Please enter a valid amount of fibres to sell",
+            "saleSuccess" : "Sale Complete",
+            "youSold" : "You sold ",
+            "fibresFor" : " fibres for ",
+            "noFibres" : "No Fibres",
+            "noFibresDesc" : "You don't have any fibres to sell"
+        }
     }
 }

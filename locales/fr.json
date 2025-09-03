@@ -1,4 +1,9 @@
 {
+    "item": {
+        "title": "Outil manquant",
+        "description": "Vous ne disposez pas des outils nécessaires pour effectuer cette tâche"
+    },
+
     "carry": {
         "title": "Inventaire plein",
         "description": "Vous ne pouvez plus porter de fibres"
