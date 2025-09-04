@@ -1,4 +1,9 @@
 {
+    "item": {
+        "title": "Eksik araç",
+        "description": "Bu görevi gerçekleştirmek için gereken araçlara sahip değilsiniz"
+    },
+
     "carry": {
         "title": "Envanter Dolu",
         "description": "Daha fazla lif taşıyamazsınız"

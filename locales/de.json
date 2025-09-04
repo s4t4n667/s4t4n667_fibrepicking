@@ -1,4 +1,9 @@
 {
+    "item": {
+        "title": "Fehlendes Werkzeug",
+        "description": "Ihnen fehlen die erforderlichen Werkzeuge, um diese Aufgabe auszuführen"
+    },
+
     "carry": {
         "title": "Inventar voll",
         "description": "Du kannst keine weiteren Fasern tragen"
