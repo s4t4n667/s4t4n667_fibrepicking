@@ -5,7 +5,7 @@ local model = 1395331371 -- prop_haybale_03
 
 local closestBale, balePos
 local lastPickTime = 0  
-
+local fibreId = 0
 
 CreateThread(function()
     if config.blip.enabled then
@@ -101,11 +101,14 @@ local function pickFibres()
     return picked
 end
 
-
 local function fibreSpots()
+    fibreId = fibreId + 1
+
+    exports.ox_target:removeModel(model, targetName)
+    
     local options = {
         {
-            name = 'fibrePicking',
+            name = ('fibrePicking_%d'):format(fibreId),
             label = config.target.label,
             icon = config.target.icon,
             iconColor = config.target.iconColor,
@@ -115,6 +118,7 @@ local function fibreSpots()
             end,
         },
     }
+
     exports.ox_target:addModel(model, options)
 end
 
