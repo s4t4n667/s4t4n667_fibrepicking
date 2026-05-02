@@ -1,7 +1,7 @@
 # s4t4n667_fibrepicking
 ## Gather fibres from across the city 🚜🧵
 
-Useful resource for acquiring fibres which can be used in crafting recipes. Uses global model targeting, allowing any hay bales across the city to be used regardless of location. Config options for skillcheck and cooldown.
+Useful resource for acquiring fibres which can be used in crafting recipes. Uses global model targeting, allowing any hay bales across the city to be used regardless of location. Config options for an item requirement to be able to pick, skillcheck and cooldown.
 
 - Supports ESX, QBCore and Qbox.
 - Supports ox_target.
