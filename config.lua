@@ -26,7 +26,6 @@ return {
     notifications = {
         position = 'top-right',
         failColor = '#8C2425',
-        successColor = '',
         icon = 'fa-solid fa-wheat-awn',
     },
     
