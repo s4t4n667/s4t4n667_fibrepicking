@@ -5,7 +5,7 @@ lua54 'yes'
 
 author "Asgaard Developments | s4t4n667"
 description 'Fibre picking resource, useful for crafting'
-version '1.0.2'
+version '2.0.0'
 
 shared_script {
     '@ox_lib/init.lua',
@@ -22,10 +22,4 @@ server_scripts {
 
 files {
     'locales/*.json',
-}
-
-dependencies {
-    'ox_lib',
-    'ox_target',
-    'ox_inventory'
 }

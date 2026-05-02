@@ -4,12 +4,21 @@
         "description" : "You are unable to carry any more fibres"
     },
 
+    "item" : {
+        "title" : "Missing Item",
+        "description" : "You are missing the required item."
+    },
+
     "fail" : {
         "title" : "Can't pick fibres",
         "description" : "You failed to pick any fibres"
     },
 
-    "progresslabel" : "Picking fibres...",
+    "progress" : {
+        "label" : "Picking fibres...",
+        "cancelTitle" : "Cancelled Picking",
+        "cancelDesc" : "You stopped picking fibres"
+    },
 
     "cooldown" : {
         "title" : "Cooldown Active",

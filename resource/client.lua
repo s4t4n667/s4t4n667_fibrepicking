@@ -2,7 +2,6 @@ lib.locale()
 local config = require('config')
 
 local model = 1395331371 -- prop_haybale_03
-
 local closestBale, balePos
 local lastPickTime = 0  
 local fibreId = 0
@@ -20,6 +19,22 @@ CreateThread(function()
     end
 end)
 
+local function itemCheck()
+    local item = config.gatherItem
+    local count = exports.ox_inventory:Search('count', item)
+
+    if count and count > 0 then 
+        return true
+    else
+        lib.notify({
+            title = locale('item.title'),
+            description = locale('item.description'),
+            icon = config.notifications.icon,
+            iconColor = config.notifications.failColor
+        })
+        return false
+    end
+end
 
 local function pickFibres()
     local ped = PlayerPedId()
@@ -34,7 +49,6 @@ local function pickFibres()
             showDuration = true,
             position = 'top-right',
             icon = 'fa-solid fa-hourglass-half',
-            iconColor = ''
         })
         return false
     end
@@ -56,6 +70,12 @@ local function pickFibres()
         return false
     end
 
+    if config.requireGatherItem then
+        if not itemCheck() then
+            return false
+        end
+    end
+
     ExecuteCommand(config.picking.animation)
     Wait(100)
 
@@ -70,17 +90,17 @@ local function pickFibres()
                 description = locale('fail.description'),
                 showDuration = true,
                 position = 'top-right',
-                icon = 'fa-solid fa-wheat-awn',
-                iconColor = '#8C2425'
+                icon = config.notifications.icon,
+                iconColor = config.notifications.failColor
             })
             return false
         end
     else
-        lib.progressCircle({
+        local success = lib.progressCircle({
             duration = config.picking.progressDuration,
-            label = locale('progresslabel'),
+            label = locale('progress.label'),
             useWhileDead = false,
-            canCancel = true,
+            canCancel = config.picking.progressCanCancel,
             position = 'bottom',
             disable = { car = true, move = true },
             anim = {
@@ -88,10 +108,21 @@ local function pickFibres()
                 clip = "idle_a",
             },
         })
+
+        if not success then
+            ClearPedTasks(ped)
+            lib.notify({
+                title = locale('progress.cancelTitle'),
+                description = locale('progress.cancelDesc'),
+                icon = config.notifications.icon,
+                iconColor = config.notifications.failColor
+            })
+            return false
+        end
     end
 
     local picked = lib.callback.await('s4t4n667_fibrepicking:PickFibre', false, config.item)
-    
+
     ClearPedTasks(ped)
 
     if picked then
@@ -118,7 +149,6 @@ local function fibreSpots()
             end,
         },
     }
-
     exports.ox_target:addModel(model, options)
 end
 

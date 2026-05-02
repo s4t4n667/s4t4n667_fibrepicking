@@ -1,18 +1,27 @@
 {
     "carry": {
         "title": "Inventaire plein",
-        "description": "Vous ne pouvez plus porter de fibres"
+        "description": "Vous ne pouvez pas transporter plus de fibres"
+    },
+
+    "item": {
+        "title": "Objet manquant",
+        "description": "Il vous manque l'objet requis."
     },
 
     "fail": {
         "title": "Impossible de ramasser des fibres",
-        "description": "Vous n'avez pas réussi à ramasser de fibres"
+        "description": "Vous n'avez réussi à ramasser aucune fibre"
     },
 
-    "progresslabel": "Ramassage des fibres...",
+    "progress": {
+        "label": "Ramassage des fibres...",
+        "cancelTitle": "Ramassage annulé",
+        "cancelDesc": "Vous avez arrêté de ramasser des fibres"
+    },
 
     "cooldown": {
         "title": "Temps de recharge actif",
-        "description": "Vous devez attendre avant de pouvoir ramasser d'autres fibres."
+        "description": "Vous devez attendre avant d'essayer de ramasser plus de fibres."
     }
 }

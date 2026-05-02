@@ -1,18 +1,27 @@
 {
     "carry": {
-        "title": "Envanter Dolu",
+        "title": "Envanter dolu",
         "description": "Daha fazla lif taşıyamazsınız"
     },
 
-    "fail": {
-        "title": "Lif Toplanamıyor",
-        "description": "Hiç lif toplamayı başaramadınız"
+    "item": {
+        "title": "Eksik eşya",
+        "description": "Gerekli eşya eksik."
     },
 
-    "progresslabel": "Lifler Toplanıyor...",
+    "fail": {
+        "title": "Lif toplanamadı",
+        "description": "Hiç lif toplayamadınız"
+    },
+
+    "progress": {
+        "label": "Lif toplanıyor...",
+        "cancelTitle": "Toplama iptal edildi",
+        "cancelDesc": "Lif toplamayı durdurdunuz"
+    },
 
     "cooldown": {
-        "title": "Bekleme Süresi Aktif",
+        "title": "Bekleme süresi aktif",
         "description": "Daha fazla lif toplamadan önce beklemelisiniz."
     }
 }

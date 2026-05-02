@@ -4,16 +4,24 @@
         "description": "Du kannst keine weiteren Fasern tragen"
     },
 
-    "fail": {
-        "title": "Kann keine Fasern aufheben",
-        "description": "Es ist dir nicht gelungen, Fasern aufzuheben"
+    "item": {
+        "title": "Gegenstand fehlt",
+        "description": "Dir fehlt der erforderliche Gegenstand."
     },
 
-    "progresslabel": "Sammle Fasern...",
+    "fail": {
+        "title": "Fasern konnten nicht gesammelt werden",
+        "description": "Du hast keine Fasern gesammelt"
+    },
+
+    "progress": {
+        "label": "Fasern werden gesammelt...",
+        "cancelTitle": "Sammeln abgebrochen",
+        "cancelDesc": "Du hast das Sammeln von Fasern gestoppt"
+    },
 
     "cooldown": {
         "title": "Abklingzeit aktiv",
         "description": "Du musst warten, bevor du weitere Fasern sammeln kannst."
     }
 }
-
