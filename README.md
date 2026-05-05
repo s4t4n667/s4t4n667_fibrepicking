@@ -1,25 +1,28 @@
 # s4t4n667_fibrepicking
 ## Gather fibres from across the city 🚜🧵
 
-Useful resource for acquiring fibres which can be used in crafting recipes. Uses global model targeting, allowing any hay bales across the city to be used regardless of location. Config options for an item requirement to be able to pick, skillcheck and cooldown.
+Useful resource for acquiring fibres which can be used in crafting recipes. Uses global model targeting, allowing any hay bales across the city to be used regardless of location. Config options for an item requirement to be able to pick, skillcheck and cooldown. Optional buy & sell shop. 
 
-- Supports ESX, QBCore and Qbox.
-- Supports ox_target.
-- Supports ox_inventory.
-- Locales: English, French & German.
+## 🔐 Dependencies:
+- any framework
+- [ox_lib](https://github.com/overextended/ox_lib)
+- [ox_target](https://github.com/overextended/ox_target)
+- [ox_inventory](https://github.com/overextended/ox_inventory)
+  
+## 🔗 Useful links:
+- [Preview video](https://youtu.be/gJlxxr6Jz58)
+- [Documentation](https://s4t4n667.gitbook.io/asgaard-developments/free-scripts/s4t4n667_fibrepicking)
 
-**Preview video:** [Click Here](https://youtu.be/gJlxxr6Jz58)
-<br>
-**Documentation:** [Click Here](https://s4t4n667.gitbook.io/asgaard-developments/free-scripts/s4t4n667_fibrepicking)
-<br>
+## 📝 Shop example:
+```lua
+        items = {
+            { type = 'buy', label = 'Shears', item = 'shears', icon = 'fa-scissors',  price = 10 },
+            { type = 'buy', label = 'Water', item = 'water', icon = 'fa-bottle-water', iconColor = '', price = 10 },
+            { type = 'sell', label = 'Fibres', item = 'fibres', icon = 'fa-seedling', iconColor = '', price = 10 },
+        },
+```
 
-> Dependencies:
-> <br>
-> [ox_lib](https://github.com/overextended/ox_lib)
-> <br>
-> [ox_target](https://github.com/overextended/ox_target)
-> <br>
-> [ox_inventory](https://github.com/overextended/ox_inventory)
+## 📌 Asgaard Developments
+I’m a solo FiveM developer creating custom clothing, logos and graphics, liveries, MLO retextures and Discord servers. Lots of different packages available, along with plenty of free assets and scripts for the community to enjoy. 
 
-## Asgaard Developments
-Join the Discord: [Click Here](https://discord.gg/eFsB5ZFxeq)
+Join the Discord: [here](https://discord.gg/eFsB5ZFxeq)
