@@ -23,5 +23,15 @@
     "cooldown" : {
         "title" : "Cooldown Active",
         "description" : "You must wait before trying to pick any more fibres."
+    },
+
+    "shop" : {
+        "title" : "Fibre Picking Shop",
+        "notify_title" : "Shop",
+        "notify_success" : "Purchase successful",
+        "notify_carry" : "You can't carry those items",
+        "notify_money" : "You do not have enough money!",
+        "notify_sell_success" : "Item successfully sold",
+        "notify_no_item" : "You do not have any items to sell"
     }
 }

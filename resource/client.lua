@@ -17,6 +17,17 @@ CreateThread(function()
         AddTextComponentString(config.blip.label)
         EndTextCommandSetBlipName(fibresBlip)
     end
+
+    if config.shop.blip.enabled then
+        local shopBlip = AddBlipForCoord(config.shop.coords.x, config.shop.coords.y, config.shop.coords.z)
+        SetBlipSprite(shopBlip, config.shop.blip.sprite)
+        SetBlipColour(shopBlip, config.shop.blip.spriteColor)
+        SetBlipScale(shopBlip, config.shop.blip.scale)
+        SetBlipAsShortRange(shopBlip, true)
+        BeginTextCommandSetBlipName('STRING')
+        AddTextComponentString(config.shop.blip.label)
+        EndTextCommandSetBlipName(shopBlip)
+    end        
 end)
 
 local function itemCheck()
@@ -152,6 +163,112 @@ local function fibreSpots()
     exports.ox_target:addModel(model, options)
 end
 
+CreateThread(function()
+    local pedModel = config.shop.pedModel
+    local coords = config.shop.coords
+
+    RequestModel(pedModel)
+    while not HasModelLoaded(pedModel) do Wait(0) end
+
+    local ped = CreatePed(4, pedModel, coords.x, coords.y, coords.z -1, coords.w, false, true)
+
+    if not DoesEntityExist(ped) then
+        return
+    end
+
+    SetEntityAsMissionEntity(ped, true, true)
+    FreezeEntityPosition(ped, true)
+    SetEntityInvincible(ped, true)
+    SetBlockingOfNonTemporaryEvents(ped, true)
+
+    exports.ox_target:addLocalEntity(ped, {
+        {
+            name = 'moneywash-shop',
+            icon = 'fa-solid fa-basket-shopping',
+            label = 'Browse Shop',
+            onSelect = function()
+                OpenShop()
+            end
+        }
+    })
+end)
+
+function OpenSellMenu()
+    local options = {}
+
+    for _, v in pairs(config.shop.items) do
+        if v.type == "sell" then
+            options[#options + 1] = {
+                title = v.label .. " - $" .. v.price,
+                icon = v.icon,
+                iconColor = v.iconColor,
+                onSelect = function()
+                    TriggerServerEvent("s4t4n667_fibrepicking:sellItem", v.item, v.price)
+                end
+            }
+        end
+    end
+
+    lib.registerContext({
+        id = 'fibrepicking_shop_sell',
+        title = "Sell Items",
+        menu = 'fibrepicking_shop_main',
+        options = options
+    })
+
+    lib.showContext('fibrepicking_shop_sell')
+end
+
+function OpenBuyMenu()
+    local options = {}
+
+    for _, v in pairs(config.shop.items) do
+        if v.type == "buy" then
+            options[#options + 1] = {
+                title = v.label .. " - $" .. v.price,
+                icon = v.icon,
+                iconColor = v.iconColor,
+                onSelect = function()
+                    TriggerServerEvent("s4t4n667_fibrepicking:buyItem", v.item, v.price)
+                end
+            }
+        end
+    end
+
+    lib.registerContext({
+        id = 'fibrepicking_shop_buy',
+        title = "Buy Items",
+        menu = 'fibrepicking_shop_main',
+        options = options
+    })
+
+    lib.showContext('fibrepicking_shop_buy')
+end
+
+function OpenShop()
+    lib.registerContext({
+        id = 'fibrepicking_shop_main',
+        title = locale('shop.title'),
+        options = {
+            {
+                title = "Buy Items",
+                icon = "fa-cart-shopping",
+                onSelect = function()
+                    OpenBuyMenu()
+                end
+            },
+            {
+                title = "Sell Items",
+                icon = "fa-hand-holding-dollar",
+                onSelect = function()
+                    OpenSellMenu()
+                end
+            }
+        }
+    })
+
+    lib.showContext('fibrepicking_shop_main')
+end
 
 RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
     fibreSpots()

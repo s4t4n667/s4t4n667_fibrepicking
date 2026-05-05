@@ -1,27 +1,37 @@
 {
-    "carry": {
-        "title": "Inventar voll",
-        "description": "Du kannst keine weiteren Fasern tragen"
+    "carry" : {
+        "title" : "Inventar voll",
+        "description" : "Du kannst keine weiteren Fasern tragen"
     },
 
-    "item": {
-        "title": "Gegenstand fehlt",
-        "description": "Dir fehlt der erforderliche Gegenstand."
+    "item" : {
+        "title" : "Gegenstand fehlt",
+        "description" : "Dir fehlt der erforderliche Gegenstand."
     },
 
-    "fail": {
-        "title": "Fasern konnten nicht gesammelt werden",
-        "description": "Du hast keine Fasern gesammelt"
+    "fail" : {
+        "title" : "Fasern können nicht gesammelt werden",
+        "description" : "Du konntest keine Fasern sammeln"
     },
 
-    "progress": {
-        "label": "Fasern werden gesammelt...",
-        "cancelTitle": "Sammeln abgebrochen",
-        "cancelDesc": "Du hast das Sammeln von Fasern gestoppt"
+    "progress" : {
+        "label" : "Fasern werden gesammelt...",
+        "cancelTitle" : "Sammeln abgebrochen",
+        "cancelDesc" : "Du hast das Sammeln von Fasern gestoppt"
     },
 
-    "cooldown": {
-        "title": "Abklingzeit aktiv",
-        "description": "Du musst warten, bevor du weitere Fasern sammeln kannst."
+    "cooldown" : {
+        "title" : "Abklingzeit aktiv",
+        "description" : "Du musst warten, bevor du weitere Fasern sammeln kannst."
+    },
+
+    "shop" : {
+        "title" : "Faser-Sammelshop",
+        "notify_title" : "Shop",
+        "notify_success" : "Kauf erfolgreich",
+        "notify_carry" : "Du kannst diese Gegenstände nicht tragen",
+        "notify_money" : "Du hast nicht genug Geld!",
+        "notify_sell_success" : "Gegenstand erfolgreich verkauft",
+        "notify_no_item" : "Du hast keine Gegenstände zum Verkaufen"
     }
 }

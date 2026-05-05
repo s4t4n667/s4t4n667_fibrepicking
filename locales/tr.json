@@ -1,27 +1,37 @@
 {
-    "carry": {
-        "title": "Envanter dolu",
-        "description": "Daha fazla lif taşıyamazsınız"
+    "carry" : {
+        "title" : "Envanter dolu",
+        "description" : "Daha fazla lif taşıyamazsınız"
     },
 
-    "item": {
-        "title": "Eksik eşya",
-        "description": "Gerekli eşya eksik."
+    "item" : {
+        "title" : "Eksik eşya",
+        "description" : "Gerekli eşyaya sahip değilsiniz."
     },
 
-    "fail": {
-        "title": "Lif toplanamadı",
-        "description": "Hiç lif toplayamadınız"
+    "fail" : {
+        "title" : "Lif toplanamadı",
+        "description" : "Hiç lif toplayamadınız"
     },
 
-    "progress": {
-        "label": "Lif toplanıyor...",
-        "cancelTitle": "Toplama iptal edildi",
-        "cancelDesc": "Lif toplamayı durdurdunuz"
+    "progress" : {
+        "label" : "Lifler toplanıyor...",
+        "cancelTitle" : "Toplama iptal edildi",
+        "cancelDesc" : "Lif toplamayı durdurdunuz"
     },
 
-    "cooldown": {
-        "title": "Bekleme süresi aktif",
-        "description": "Daha fazla lif toplamadan önce beklemelisiniz."
+    "cooldown" : {
+        "title" : "Bekleme süresi aktif",
+        "description" : "Daha fazla lif toplamadan önce beklemelisiniz."
+    },
+
+    "shop" : {
+        "title" : "Lif Toplama Mağazası",
+        "notify_title" : "Mağaza",
+        "notify_success" : "Satın alma başarılı",
+        "notify_carry" : "Bu eşyaları taşıyamazsınız",
+        "notify_money" : "Yeterli paranız yok!",
+        "notify_sell_success" : "Eşya başarıyla satıldı",
+        "notify_no_item" : "Satacak eşyanız yok"
     }
 }
