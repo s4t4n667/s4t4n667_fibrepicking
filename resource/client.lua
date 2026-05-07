@@ -183,7 +183,7 @@ CreateThread(function()
 
     exports.ox_target:addLocalEntity(ped, {
         {
-            name = 'moneywash-shop',
+            name = 'fibrepicking-shop',
             icon = 'fa-solid fa-basket-shopping',
             label = 'Browse Shop',
             onSelect = function()
