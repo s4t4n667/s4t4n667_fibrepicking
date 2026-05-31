@@ -163,35 +163,39 @@ local function fibreSpots()
     exports.ox_target:addModel(model, options)
 end
 
-CreateThread(function()
-    local pedModel = config.shop.pedModel
-    local coords = config.shop.coords
+if config.shop.enabled then
+    CreateThread(function()
+        local pedModel = config.shop.pedModel
+        local coords = config.shop.coords
 
-    RequestModel(pedModel)
-    while not HasModelLoaded(pedModel) do Wait(0) end
+        RequestModel(pedModel)
+        while not HasModelLoaded(pedModel) do
+            Wait(0)
+        end
 
-    local ped = CreatePed(4, pedModel, coords.x, coords.y, coords.z -1, coords.w, false, true)
+        local ped = CreatePed(4, pedModel, coords.x, coords.y, coords.z - 1, coords.w, false, true)
 
-    if not DoesEntityExist(ped) then
-        return
-    end
+        if not DoesEntityExist(ped) then
+            return
+        end
 
-    SetEntityAsMissionEntity(ped, true, true)
-    FreezeEntityPosition(ped, true)
-    SetEntityInvincible(ped, true)
-    SetBlockingOfNonTemporaryEvents(ped, true)
+        SetEntityAsMissionEntity(ped, true, true)
+        FreezeEntityPosition(ped, true)
+        SetEntityInvincible(ped, true)
+        SetBlockingOfNonTemporaryEvents(ped, true)
 
-    exports.ox_target:addLocalEntity(ped, {
-        {
-            name = 'fibrepicking-shop',
-            icon = 'fa-solid fa-basket-shopping',
-            label = 'Browse Shop',
-            onSelect = function()
-                OpenShop()
-            end
-        }
-    })
-end)
+        exports.ox_target:addLocalEntity(ped, {
+            {
+                name = 'fibrepicking-shop',
+                icon = 'fa-solid fa-basket-shopping',
+                label = 'Browse Shop',
+                onSelect = function()
+                    OpenShop()
+                end
+            }
+        })
+    end)
+end
 
 function OpenSellMenu()
     local options = {}
