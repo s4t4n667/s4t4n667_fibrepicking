@@ -5,7 +5,7 @@ lua54 'yes'
 
 author "Asgaard Developments | s4t4n667"
 description 'Fibre picking resource, useful for crafting'
-version '2.0.1'
+version '2.0.2'
 
 shared_script {
     '@ox_lib/init.lua',
