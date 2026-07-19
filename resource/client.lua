@@ -5,6 +5,8 @@ local model = 1395331371 -- prop_haybale_03
 local closestBale, balePos
 local lastPickTime = 0  
 local fibreId = 0
+local hasBuy = false
+local hasSell = false
 
 CreateThread(function()
     if config.blip.enabled then
@@ -250,25 +252,44 @@ function OpenBuyMenu()
 end
 
 function OpenShop()
+    local options = {}
+
+    for _, v in pairs(config.shop.items) do
+        if v.type == "buy" then
+            hasBuy = true
+        elseif v.type == "sell" then
+            hasSell = true
+        end
+    end
+
+    if hasBuy then
+        options[#options + 1] = {
+            title = "Buy Items",
+            icon = "fa-cart-shopping",
+            onSelect = function()
+                OpenBuyMenu()
+            end
+        }
+    end
+
+    if hasSell then
+        options[#options + 1] = {
+            title = "Sell Items",
+            icon = "fa-hand-holding-dollar",
+            onSelect = function()
+                OpenSellMenu()
+            end
+        }
+    end
+
+    if #options == 0 then
+        return
+    end
+
     lib.registerContext({
         id = 'fibrepicking_shop_main',
         title = locale('shop.title'),
-        options = {
-            {
-                title = "Buy Items",
-                icon = "fa-cart-shopping",
-                onSelect = function()
-                    OpenBuyMenu()
-                end
-            },
-            {
-                title = "Sell Items",
-                icon = "fa-hand-holding-dollar",
-                onSelect = function()
-                    OpenSellMenu()
-                end
-            }
-        }
+        options = options
     })
 
     lib.showContext('fibrepicking_shop_main')
