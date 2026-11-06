@@ -3,7 +3,7 @@
 Useful resource for acquiring fibres which can be used in crafting recipes. Uses global model targeting, allowing any hay bales across the city to be used regardless of location. Config options for an item requirement to be able to pick, skillcheck and cooldown. Optional buy & sell shop. 
 
 ## 🔐 Dependencies:
-- any framework
+- [ESX](https://github.com/esx-framework/esx_core), [QBCore](https://github.com/qbcore-framework) or [Qbox](https://github.com/Qbox-project/)
 - [ox_lib](https://github.com/overextended/ox_lib)
 - [ox_target](https://github.com/overextended/ox_target)
 - [ox_inventory](https://github.com/overextended/ox_inventory)
