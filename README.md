@@ -12,6 +12,13 @@ Useful resource for acquiring fibres which can be used in crafting recipes. Uses
 - [Preview video](https://youtu.be/gJlxxr6Jz58)
 - [Documentation](https://s4t4n667.gitbook.io/asgaard-developments/free-scripts/s4t4n667_fibrepicking)
 
+## ⚙️ How to install:
+1) Download the latest release
+2) Add `s4t4n667_fibrepicking` to your server's `resource` folder
+3) Adjust the `config.lua` to your liking
+4) Add the items into `ox_inventory/data/items.lua`
+5) Restart your server
+
 ## 📦 Items:
 ```lua
 --- ox_inventory/data/items.lua
