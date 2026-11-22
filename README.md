@@ -1,16 +1,22 @@
-## Gather fibres from across the city 🚜🧵
+<div align="center">
 
-Useful resource for acquiring fibres which can be used in crafting recipes. Uses global model targeting, allowing any hay bales across the city to be used regardless of location. Config options for an item requirement to be able to pick, skillcheck and cooldown. Optional buy & sell shop. 
+# s4t4n667_fibrepicking
+
+Useful resource for acquiring fibres which can be used in crafting recipes. Uses global model targeting, allowing any hay bales across the city to be used regardless of location. Config options for an item requirement to be able to pick, skillcheck and cooldown. Optional buy & sell shop.
+
+[**Preview Video**](https://youtu.be/gJlxxr6Jz58) | [**Documentation**](https://s4t4n667.gitbook.io/asgaard-developments/free-scripts/s4t4n667_fibrepicking) | [**Store**](https://asgaard-developments.tebex.io/)
+
+<a href="https://5metrics.dev/resource/s4t4n667_fibrepicking">
+  <img src="https://badges.5metrics.dev/s4t4n667_fibrepicking/servers.svg?style=for-the-badge" alt="Servers">
+</a>
+
+</div>
 
 ## 🔐 Dependencies:
 - [ESX](https://github.com/esx-framework/esx_core), [QBCore](https://github.com/qbcore-framework) or [Qbox](https://github.com/Qbox-project/)
 - [ox_lib](https://github.com/overextended/ox_lib)
 - [ox_target](https://github.com/overextended/ox_target)
 - [ox_inventory](https://github.com/overextended/ox_inventory)
-  
-## 🔗 Useful links:
-- [Preview video](https://youtu.be/gJlxxr6Jz58)
-- [Documentation](https://s4t4n667.gitbook.io/asgaard-developments/free-scripts/s4t4n667_fibrepicking)
 
 ## ⚙️ How to install:
 1) Download the latest release
@@ -41,11 +47,23 @@ Useful resource for acquiring fibres which can be used in crafting recipes. Uses
 
 ## 📝 Shop example:
 ```lua
-        items = {
-            { type = 'buy', label = 'Shears', item = 'shears', icon = 'fa-scissors',  price = 10 },
-            { type = 'buy', label = 'Water', item = 'water', icon = 'fa-bottle-water', iconColor = '', price = 10 },
-            { type = 'sell', label = 'Fibres', item = 'fibres', icon = 'fa-seedling', iconColor = '', price = 10 },
-        },
+shop = {
+    enabled = true,
+    blip = {
+        enabled = true,
+        label = 'Fibre Picking Shop',
+        sprite = 52,
+        spriteColor = 16,
+        scale = 0.8
+    },
+    coords = vector4(2587.6760, 4665.5801, 34.0768, 224.9989),
+    pedModel = 'a_m_m_farmer_01',
+    items = {
+        { type = 'buy', label = 'Shears', item = 'shears', icon = 'fa-scissors',  price = 10 },
+        { type = 'buy', label = 'Water', item = 'water', icon = 'fa-bottle-water', iconColor = '', price = 10 },
+        { type = 'sell', label = 'Fibres', item = 'fibres', icon = 'fa-seedling', iconColor = '', price = 10 },
+    },        
+},
 ```
 
 ## 📌 Asgaard Developments
